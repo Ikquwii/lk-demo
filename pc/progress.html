@@ -1368,6 +1368,20 @@
 
 
 <script src="assets/app.js"></script>
+<script id="dw-zach-tabs">
+(function(){
+  function semOf(el){var m=(el.textContent||'').match(/([1-4])-й семестр/);return m?m[1]:null;}
+  var tabs=[].slice.call(document.querySelectorAll('.es-progress__tab-header-item')).filter(semOf);
+  if(!tabs.length) return;
+  function show(n){
+    [].forEach.call(document.querySelectorAll('.es-progress__tab-body-item'),function(b){
+      var m=(b.className||'').match(/\btab([1-4])\b/); if(m) b.style.display=(m[1]===n?'block':'none');
+    });
+    tabs.forEach(function(t){ if(semOf(t)===n){t.classList.add('active');}else{t.classList.remove('active');} });
+  }
+  tabs.forEach(function(t){ t.style.cursor='pointer'; t.addEventListener('click',function(e){e.preventDefault();show(semOf(t));}); });
+})();
+</script>
 </body>
 <div id="popup_box"></div>
 </html>
