@@ -22515,4 +22515,35 @@ form.vote-form {
   document.addEventListener('click',function(e){if(!wrap.contains(e.target))wrap.classList.remove('open');});
 })();
 </script>
+<style id="dw-mobile-cascade-fix">
+/* Реставрация мобильной раскладки списков: оригинальный mobile-CSS инлайнен раньше десктопного style.css и перебивался его фикс-ширинами колонок. Правила 1-в-1 из оригинального @media-блока, усилены !important. */
+@media only screen and (max-width: 767px) {
+.es-training__line { padding-left: 10px !important; margin-bottom: 10px !important; }
+.es-training__hidden-body .es-training__line { margin-bottom: 8px !important; }
+/* table */
+  .es-progress__line:first-child { display: none !important; }
+.es-progress__line { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; padding: 10px 0 !important; }
+.es-progress__line:last-child { border-bottom: 0 !important; }
+.es-progress__line-item { width: 100% !important; margin-right: 0 !important; margin-bottom: 10px !important; display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; }
+.es-progress__line-item span.for-mobile { display: inline-block !important; width: 150px !important; -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+.request__list span.for-mobile { display: inline-block !important; width: 150px !important; -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+.es-curriculum__line:first-child { display: none !important; }
+.es-curriculum__line { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; padding: 10px 0 0 !important; margin-top: 6px !important; }
+.es-curriculum__line:last-child { border-bottom: 0 !important; }
+.es-curriculum__line-item { width: 100% !important; margin-right: 0 !important; margin-bottom: 10px !important; display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; }
+.es-curriculum__line-item span.for-mobile { display: inline-block !important; width: 150px !important; -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+.es-curriculum__discipline span.for-mobile { display: none !important; }
+.es-curriculum__total span.for-mobile, .es-curriculum__control span.for-mobile, .es-curriculum__lectures span.for-mobile, .es-curriculum__practical span.for-mobile, .es-curriculum__laboratory span.for-mobile { display: block !important; width: 100% !important; }
+/* table */
+  .es-portfolio__line { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; }
+.es-portfolio__line-item { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; }
+.es-portfolio__line-item span.for-mobile { display: block !important; width: 150px !important; -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+.es-portfolio__tab-body:not(.es-portfolio__tab-body-admin) .es-portfolio__line-item span.for-mobile { display: none !important; }
+.es-rating__line:first-child, .es-final-clearance__line:first-child { display: none !important; }
+.es-rating__line, .es-final-clearance__line { -ms-flex-wrap: wrap !important; flex-wrap: wrap !important; padding: 10px 0 !important; }
+.es-rating__line:last-child, .es-final-clearance__line:last-child { border-bottom: 0 !important; }
+.es-rating__line-item, .es-final-clearance__line-item { width: 100% !important; margin-right: 0 !important; margin-bottom: 10px !important; display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; }
+.es-rating__line-item span.for-mobile, .es-final-clearance__line-item span.for-mobile { display: inline-block !important; width: 150px !important; -ms-flex-negative: 0 !important; flex-shrink: 0 !important; }
+}
+</style>
 </body></html>
