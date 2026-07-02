@@ -22329,7 +22329,10 @@ form.vote-form {
   var items=[],cur=null,seen={};
   linkEls.forEach(function(a){
     var t=(a.textContent||'').replace(/\s+/g,' ').trim(),href=a.getAttribute('href');
-    if(!t||!href||seen[t]) return; seen[t]=1;
+    if(!t||!href||seen[t]) return;
+    if(/^([1-4]-й семестр|Все)$/.test(t)) return;
+    if(a.closest && a.closest('.es-progress__tab-header,.sort-links')) return;
+    seen[t]=1;
     var act=/active|current/i.test(a.className)||/active|current/i.test((a.parentElement||{}).className||'');
     items.push({t:t,href:href}); if(act&&!cur)cur=t;
   });
